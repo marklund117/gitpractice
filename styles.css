@@ -1,18 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
-
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 ul {
     list-style: none;
 }
+
 a:link {
     text-decoration: none;
 }
-#navbar{
+
+#navbar {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -22,23 +25,27 @@ a:link {
     background-color: slateblue;
     min-width: 480px;
 }
-.navlist{
+
+.navlist {
     display: flex;
     height: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.navitem{
+
+.navitem {
     margin-right: 2rem;
     font-family: 'Segoe UI';
     color: white;
     font-size: 20px;
 }
-.navitem:hover{
+
+.navitem:hover {
     position: relative;
     top: -5px;
 }
+
 #welcome-section {
     display: flex;
     flex-direction: column;
@@ -51,13 +58,15 @@ a:link {
     color: white;
     font-size: 3.5em;
     font-family: monospace;
-     text-shadow: 1px 1px slateblue;
+    text-shadow: 1px 1px slateblue;
 }
+
 #demosubtext {
     font-family: sans-serif;
     margin-top: 1em;
     font-size: 0.5em;
 }
+
 #projects {
     width: 100%;
     padding: 5rem 1rem;
@@ -67,12 +76,14 @@ a:link {
     justify-content: center;
     align-items: center;
 }
+
 .beforegrid {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
+
 #herearesome {
     font-family: monospace;
     font-size: 3em;
@@ -81,6 +92,7 @@ a:link {
     text-shadow: 1px 1px slateblue;
     margin-bottom: 2em;
 }
+
 .projectgrid {
     display: grid;
     grid-gap: 1em;
@@ -89,6 +101,13 @@ a:link {
     grid-template-columns: repeat(auto-fit, minmax(27em, 1fr));
     justify-items: center;
 }
+
+@media (max-width: 30em) {
+    #projects {
+        flex-direction: column;
+    }
+}
+
 .project-tile {
     font-family: monospace;
     display: flex;
@@ -100,16 +119,19 @@ a:link {
     box-shadow: 1px 1px slateblue;
     margin: 1em;
 }
+
 .boxname {
     font-size: 1.5em;
     color: white;
     margin-bottom: 1em;
     margin-top: 1em;
 }
+
 .tileimg {
     height: 30em;
     width: 30em;
 }
+
 #contacts {
     display: flex;
     flex-direction: center;
@@ -117,12 +139,36 @@ a:link {
     justify-content: center;
     width: 100%;
 }
-@media (max-width: 30em){
-    #projects {
-        flex-direction: column;
-    }
 
+#contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
+
+#contitle {
+    font-size: 3em;
+    font-family: monospace;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px slateblue;
+    margin-top: 1em;
+}
+
+.profiletag {
+    color: white;
+    background-color: slateblue;
+    padding: 0.5em;
+    font-size: 2.5em;
+    border-radius: 0.5em;
+    font-family: monospace;
+    margin-bottom: 1em;
+}
+
+.profiletag:hover {
+    transition: all 0.5s;
+    transform: translateY(-5px);
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -133,29 +179,3 @@ footer {
     font-family: monospace;
     color: slateblue;
 }
-#contacts {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-#contitle{
-    font-size: 3em;
-    font-family: monospace;
-    margin-bottom: 1em;
-    text-shadow: 1px 1px slateblue;
-    margin-top: 1em;
-}
-.profiletag {
-    color: white;
-    background-color: slateblue;
-    padding: 0.5em;
-    font-size: 2.5em;
-    border-radius: 0.5em;
-    font-family: monospace;
-    margin-bottom: 1em;
-}
-.profiletag:hover{
-    transition: all 0.5s;
-    transform: translateY(-5px);
-}
-
