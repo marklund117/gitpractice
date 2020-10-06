@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ul {
+    list-style: none;
+}
+a:link {
+    text-decoration: none;
+}
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: slateblue;
+}
+.navlist{
+    display: flex;
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navitem{
+    margin-right: 2rem;
+    font-family: 'Segoe UI';
+    color: white;
+    font-size: 20px;
+}
+.navitem:hover{
+    position: relative;
+    top: -5px;
+}
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #555555;
+}
+#projects {
+    width: 100%;
+    height: 100vh;
+    padding: 5rem 1rem;
+}
+#contacts {
+    width: 100%;
+    height: 100vh;
+}
+@media (max-width: 30em){
+    #projects {
+        flex-direction: column;
+    }
+
+}
