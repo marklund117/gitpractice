@@ -3,6 +3,9 @@
     padding: 0;
 
 }
+html {
+    scroll-behavior: smooth;
+}
 ul {
     list-style: none;
 }
@@ -17,6 +20,7 @@ a:link {
     top: 0;
     width: 100%;
     background-color: slateblue;
+    min-width: 480px;
 }
 .navlist{
     display: flex;
@@ -43,15 +47,76 @@ a:link {
     width: 100%;
     height: 100vh;
     background-color: #555555;
+    background: linear-gradient(30deg, #bbbbbb, #999999);
+    color: white;
+    font-size: 3.5em;
+    font-family: monospace;
+     text-shadow: 1px 1px slateblue;
+     padding: 0.5em;
+}
+#demosubtext {
+    font-family: sans-serif;
+    margin-top: 1em;
+    font-size: 0.5em;
 }
 #projects {
     width: 100%;
-    height: 100vh;
     padding: 5rem 1rem;
+    background-color: #3c84a0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.beforegrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+#herearesome {
+    font-family: monospace;
+    font-size: 3em;
+    margin-top: -1em;
+    color: white;
+    text-shadow: 1px 1px slateblue;
+    margin-bottom: 2em;
+}
+.projectgrid {
+    display: grid;
+    grid-gap: 1em;
+    width: 100%;
+    margin-bottom: 2em;
+    grid-template-columns: repeat(auto-fit, minmax(27em, 1fr));
+    justify-items: center;
+}
+.project-tile {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    max-width: 30em;
+    box-shadow: 1px 1px slateblue;
+    margin: 1em;
+}
+.boxname {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.tileimg {
+    height: 30em;
+    width: 30em;
 }
 #contacts {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100vh;
 }
 @media (max-width: 30em){
     #projects {
@@ -59,3 +124,39 @@ a:link {
     }
 
 }
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    font-size: 1em;
+    font-family: monospace;
+    color: slateblue;
+}
+#contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#contitle{
+    font-size: 3em;
+    font-family: monospace;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px slateblue;
+    margin-top: 1em;
+}
+.profiletag {
+    color: white;
+    background-color: slateblue;
+    padding: 0.5em;
+    font-size: 2.5em;
+    border-radius: 0.5em;
+    font-family: monospace;
+    margin-bottom: 1em;
+}
+.profiletag:hover{
+    transition: all 0.5s;
+    transform: translateY(-5px);
+}
+
