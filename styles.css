@@ -118,6 +118,12 @@ a:link {
     max-width: 30em;
     box-shadow: 1px 1px slateblue;
     margin: 1em;
+    transition: transform 0.5s ease-out;
+}
+
+.project-tile:hover {
+    transition: all 0.5s;
+    transform: translateY(-5px);
 }
 
 .boxname {
@@ -162,6 +168,7 @@ a:link {
     border-radius: 0.5em;
     font-family: monospace;
     margin-bottom: 1em;
+    transition: transform 0.5s ease-out;
 }
 
 .profiletag:hover {
