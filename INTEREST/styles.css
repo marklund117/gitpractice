@@ -1,0 +1,140 @@
+body {
+  background-color: #112233;
+  margin: 15px;
+  padding-left: 10px;
+  color: white;
+}
+.toplogodiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.toplogo {
+  height: 100px;
+  padding: 10px;
+}
+.maintitle {
+  color: white;
+  font-size: 70px;
+  font-family: "Share Tech";
+  padding: 10px;
+}
+.uppercontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.profilebox {
+  display: flex;
+  flex-direction: row;
+  height: 250px;
+  align-items: center;
+}
+.profileimg {
+  height: 220px;
+  padding: 0px;
+  background-color: red;
+}
+.upperright {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 10px;
+}
+.nameanddate {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 34px;
+  width: 100%;
+  padding-top: 10px;
+}
+.marklund {
+  height: 100%;
+  width: 30%;
+}
+.myname {
+  font-family: "share tech";
+  font-size: 30px;
+  margin: 0;
+}
+.date {
+  height: 100%;
+  width: 60%;
+}
+.today {
+  font-family: "share tech mono";
+  font-size: 30px;
+  text-align: right;
+  margin: 0;
+}
+.bulletbox {
+  background-color: #555555;
+  width: 100%;
+  height: 181px;
+  margin-top: 10px;
+}
+.because {
+  font-family: "share tech";
+  padding-left: 23px;
+}
+.bulletdiv {
+}
+.reasons {
+  font-family: "share tech";
+  font-size: 16px;
+}
+.iconbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.icon {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.iconlink {
+  height: 220px;
+}
+figcaption {
+  max-width: 220px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ddd;
+  text-align: left;
+  position: relative;
+  top: -27px;
+  padding: 8px;
+}
+.excited {
+  padding-right: 10px;
+}
+.lowerbox {
+  background-color: #555555;
+  width: 100%;
+  height: 181px;
+  margin-top: 10px;
+}
+.lowersec {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-right: 0px;
+  margin-right: 0px;
+}
+.reasons {
+  margin: 20px;
+}
+.foot {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
