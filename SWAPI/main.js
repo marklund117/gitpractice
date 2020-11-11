@@ -6,7 +6,7 @@ import { planets } from '../DATA/planets.js'
 //log a message to the console to confirm we are working with HTML
 console.log("main.js has logged to the console")
 
-//define main
+//define main with queryselector
 const main = document.querySelector('main')
 
 //load stuff up
