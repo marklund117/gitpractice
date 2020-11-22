@@ -2,7 +2,7 @@
 //stored in a different folder
 //random comment lol
 //anotha one yes
-//camellia xd ayy
+//camellia xd ayy lol
 import { vehicles } from '../DATA/vehicles.js'
 import { planets } from '../DATA/planets.js'
 
