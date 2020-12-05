@@ -1,8 +1,5 @@
 //import data
 //stored in a different folder
-//random comment lol
-//anotha one yes
-//camellia xd ayy lol yes gaming haha e e e e ee gaming2 projekt gamer3 delta be[p]
 import { vehicles } from '../DATA/vehicles.js'
 import { planets } from '../DATA/planets.js'
 
