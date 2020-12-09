@@ -1,6 +1,6 @@
 //import data
 //stored in a different folder
-//haha yes e
+//haha yes e l r
 import { vehicles } from '../DATA/vehicles.js'
 import { planets } from '../DATA/planets.js'
 
