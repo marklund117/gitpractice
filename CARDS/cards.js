@@ -41,6 +41,13 @@ function loadPage() {
         })
 }
 
+//page clear Function
+function delPage(container) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
+
 //new pokemon adder button
 const adderButton = document.querySelector('#adderbutton')
 
@@ -80,16 +87,20 @@ function populateFront(pokemon) {
     let cardFront = document.createElement('div')
     let frontLabel = document.createElement('p')
     let frontImage = document.createElement('img')
+    let frontButtons = document.createElement('h1')
     //assign values
     frontLabel.textContent = pokemon.name
     frontImage.src = `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${getThreeDigitID(pokemon)}.png`
+    frontButtons.textContent = `+ O`
     //assign class names
     cardFront.className = 'cardface cardface--front'
     frontLabel.className = 'frontlabel'
     frontImage.className = 'frontimage'
+    frontButtons.className = 'frontbuttons'
     //append
     cardFront.appendChild(frontImage)
     cardFront.appendChild(frontLabel)
+    cardFront.appendChild(frontButtons)
     return cardFront
 }
 //function to populate the card back
@@ -102,9 +113,9 @@ function populateBack(pokemon) {
     let abilityLabel = document.createElement('h1')
     let abilityList = document.createElement('ul')
     //move label and list
-    let moveLabel = document.createElement('h1')
-    let moveList = document.createElement('ul')
-    let strongMove = document.createElement('h1')
+    let statsLabel = document.createElement('h1')
+    let pokeWeight = document.createElement('h1')
+    let pokeHeight = document.createElement('h1')
     //***assign values***
     backLabel.textContent = pokemon.name
     //abilities
@@ -115,9 +126,10 @@ function populateBack(pokemon) {
         abilityList.appendChild(abilityName)
     })
     //moves
-    moveLabel.textContent = 'Height:'
+    statsLabel.textContent = 'Other Stats:'
     //const mostPowerfulMove = getBestPower(pokemon.moves)
-    strongMove.textContent = `${pokemon.height}`
+    pokeHeight.textContent = `Height: ${pokemon.height}`
+    pokeWeight.textContent = `Weight: ${pokemon.weight}`
     //***assign class names***
     //back label
     backLabel.className = 'backlabel'
@@ -125,9 +137,9 @@ function populateBack(pokemon) {
     abilityLabel.className = 'abilitylabel'
     abilityList.className = 'abilitylist'
     //moves
-    moveLabel.className = 'abilitylabel'
-    moveList.className = 'abilitylist'
-    strongMove.className = 'mostpow'
+    statsLabel.className = 'abilitylabel'
+    pokeWeight.className = 'mostpow'
+    pokeHeight.className = 'mostpow'
     //card back overall
     cardBack.className = 'cardface cardface--back'
     //***append***
@@ -137,9 +149,9 @@ function populateBack(pokemon) {
     cardBack.appendChild(abilityLabel)
     cardBack.appendChild(abilityList)
     //moves
-    cardBack.appendChild(moveLabel)
-    cardBack.appendChild(strongMove)
-    cardBack.appendChild(moveList)
+    cardBack.appendChild(statsLabel)
+    cardBack.appendChild(pokeHeight)
+    cardBack.appendChild(pokeWeight)
     //and finally, return the whole cardback
     return cardBack
 }
@@ -170,6 +182,7 @@ function getThreeDigitID(pokemon) {
     }
 }
 loadPage()
+delPage()
 
 function Pokemon(name, type, height, abilities, moves) {
     this.name = name

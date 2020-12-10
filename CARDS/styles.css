@@ -8,6 +8,67 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
 }
+
+#welcometo {
+    font-size: 70px;
+    color: orange;
+    padding: 20px;
+    font-family: monospace;
+}
+#specform {
+    display: flex;
+    width: 900px%;
+}
+.inputfield {
+    width: 280px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: #CCCCCC;  
+}
+::placeholder{
+    font-size: 1.1 em;
+    text-align: center;
+}
+#submitter {
+     border-radius: 20px;
+     width: 280px;
+     margin: 10px;
+     background-color: orange;
+     font-size: 2em;
+     font-family: monospace;
+     font-weight: bold;
+     text-shadow: 1px 1px #CCCCCC;
+     color: #333333;
+}
+
+#adderbutton {
+    border-radius: 20px;
+     width: 880px;
+     margin: 10px;
+     height: 40px;
+     background-color: orange;
+     font-size: 2em;
+     font-family: monospace;
+     font-weight: bold;
+     text-shadow: 1px 1px #CCCCCC;
+     color: #333333;
+}
+
+#adderbutton:hover {
+    color: orangered;
+}
+body {
+    background-color: orange;
+}
+header {
+    height: 280px;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 1000px;
+}
 .cardgrid {
     display: flex;
     flex-wrap: wrap;
@@ -31,14 +92,24 @@ img {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .frontimage {
-    width: 160px;
-    height: 160px;
-    margin-top: 20px;
-    margin-bottom: 50px;
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color:  rgb(168, 189, 162);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.frontbuttons {
+    font-size: 3.5em;
+    margin-top: -5px;
+    font-family: 'Courier New';
+    color: rgb(255, 102, 82);
 }
 
 .card.is-flipped {
@@ -55,16 +126,24 @@ img {
     justify-content: flex-start;
     align-items: center;
     backface-visibility: hidden;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .cardface--front {
     background: #333333;
     color: white;
     font-family: monospace;
-    font-size: 2em;
 }
-  
+
+.frontlabel {
+    color: black;
+    font-family: monospace;
+    font-size: 2em;
+    background-color: rgb(168, 189, 162);
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+}
 .cardface--back {
     transform: rotateY(180deg);
     background: #444444;
@@ -85,22 +164,24 @@ img {
     color: rgb(66, 179, 231);
     font-family: sans-serif;
     font-size: 1.2em;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 25px;
 }
 
 .abilitylist {
-    width: 100%;
-    color: white;
-    font-size: 1.1em;
-    font-family: monospace;
-}
-
-.mostpow {
     color: rgb(255, 102, 82);
     font-family: sans-serif;
     font-style: italic;
     width: 100%;
-    text-align: center;
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.mostpow {
+    width: 100%;
+    color: white;
+    font-size: 1.5em;
+    font-family: monospace;
+    margin-left: 27px;
     margin-top: 10px;
 }
