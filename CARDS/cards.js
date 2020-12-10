@@ -57,8 +57,6 @@ function populatePokeCard(pokemon) {
     //event listener for clicks
     cardScene.addEventListener('click', () => {
         card.classList.toggle('is-flipped')
-        console.log(startPoint)
-        console.log(howMany)
     })
     //build the scene
     card.appendChild(populateFront(pokemon))
@@ -87,16 +85,66 @@ function populateFront(pokemon) {
 }
 //function to populate the card back
 function populateBack(pokemon) {
-    //create elements
+    //***create elements***
+    //cardback itself
     let cardBack = document.createElement('div')
     let backLabel = document.createElement('p')
-    //assign values
+    //ability label and list
+    let abilityLabel = document.createElement('h1')
+    let abilityList = document.createElement('ul')
+    //move label and list
+    let moveLabel = document.createElement('h1')
+    let moveList = document.createElement('ul')
+    let strongMove = document.createElement('h1')
+    //***assign values***
     backLabel.textContent = pokemon.name
-    //assign class names
+    //abilities
+    abilityLabel.textContent = 'Abilities:'
+    pokemon.abilities.forEach(ability =>{
+        let abilityName = document.createElement('li')
+        abilityName.textContent = ability.ability.name
+        abilityList.appendChild(abilityName)
+    })
+    //moves
+    moveLabel.textContent = 'Most Powerful Move:'
+    const mostPowerfulMove = getBestPower(pokemon.moves)
+    //strongMove.textContent = `${mostPowerfulMove.move.name}`
+    //***assign class names***
+    //back label
+    backLabel.className = 'backlabel'
+    //abilities
+    abilityLabel.className = 'abilitylabel'
+    abilityList.className = 'abilitylist'
+    //moves
+    moveLabel.className = 'abilitylabel'
+    moveList.className = 'abilitylist'
+    strongMove.className = 'mostpow'
+    //card back overall
     cardBack.className = 'cardface cardface--back'
-    //append
+    //***append***
+    //back label
     cardBack.appendChild(backLabel)
+    //abilities
+    cardBack.appendChild(abilityLabel)
+    cardBack.appendChild(abilityList)
+    //moves
+    cardBack.appendChild(moveLabel)
+    cardBack.appendChild(strongMove)
+    cardBack.appendChild(moveList)
+    //and finally, return the whole cardback
     return cardBack
+}
+
+//function to sort moves
+function getBestPower(pokemoves) {
+    return pokemoves.reduce((mostPowerful, move) => {
+        //console.log(move.url)
+        getAPIData(move.move.url).then
+            (async (data) => {
+                console.log(data.accuracy, data.power)
+            })
+     //   return mostPowerful.power > move.power ? mostPowerful : move;
+    }, {})
 }
 
 //function to change the ID of a given pokemon to 3 digit format for use in the template URL
