@@ -41,6 +41,15 @@ function loadPage() {
         })
 }
 
+//new pokemon adder button
+const adderButton = document.querySelector('#adderbutton')
+
+//event listener for adder button
+adderButton.addEventListener('click', () => {
+    let promptforname = prompt("What would you like to name the new card?")
+    populatePokeCard(createNewCard(promptforname))
+})
+
 //create a card grid
 const cardGrid = document.querySelector(`.cardgrid`)
 
@@ -106,9 +115,9 @@ function populateBack(pokemon) {
         abilityList.appendChild(abilityName)
     })
     //moves
-    moveLabel.textContent = 'Most Powerful Move:'
-    const mostPowerfulMove = getBestPower(pokemon.moves)
-    //strongMove.textContent = `${mostPowerfulMove.move.name}`
+    moveLabel.textContent = 'Height:'
+    //const mostPowerfulMove = getBestPower(pokemon.moves)
+    strongMove.textContent = `${pokemon.height}`
     //***assign class names***
     //back label
     backLabel.className = 'backlabel'
@@ -162,12 +171,15 @@ function getThreeDigitID(pokemon) {
 }
 loadPage()
 
-function Pokemon(name, type, strength, abilities) {
+function Pokemon(name, type, height, abilities, moves) {
     this.name = name
     this.type = type
-    this.strength = strength
+    this.height = height
     this.abilities = abilities
     this.id = 900
+    this.moves = moves
 }
-let Hitler = new Pokemon('Hitler', 'Nazi', 'Infinite', ['Genocide', 'Racism'])
-console.log(Hitler)
+//new card creator function
+function createNewCard(name) {
+    return new Pokemon(name, 'Student', '6 foot 4', ['Memes', 'Bad Sleep'], ['Overwork', 'Eat Eurrito'])
+}
