@@ -1,8 +1,18 @@
 //this is the JS file to control the cards project
-
+//this code contains:
+//variables and scope
+//custom objects
+//let and const
+//arrow functions
+//template literals
+//object declaration
+//key-value pairs
+//dot notation used to access constructors and objects, objects using constructors
 //async function to fetch data from a URL
 async function getAPIData(url) {
     try {
+        //example of using const
+        //also variables with scope
         const response = await fetch(url)
         const data = await response.json()
         return data
@@ -11,10 +21,11 @@ async function getAPIData(url) {
     }
 }
 //how many pokemon and starting from where?
+//example of using let
 let startPoint = 1;
 let howMany = 40;
 
-//change the start point and card nums based on user input? (NEED TO FIND OUT HOW TO DO THIS)
+//change the start point and card nums based on user input??? (NEED TO FIND OUT HOW TO DO THIS)
 //let form = document.querySelector('form')
 
 //function to update variables based on form input
@@ -31,8 +42,11 @@ let howMany = 40;
 
 //Page Loader Function
 function loadPage() {
+    //template literal here
+    //more async here
     getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${howMany}&offset=${startPoint - 1}`).then
         (async (data) => {
+            //key-value pairs here
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
                     populatePokeCard(pokeData)
@@ -52,6 +66,7 @@ function delPage(container) {
 const adderButton = document.querySelector('#adderbutton')
 
 //event listener for adder button
+//arrow function here (one of several)
 adderButton.addEventListener('click', () => {
     let promptforname = prompt("What would you like to name the new card?")
     populateCustomCard(createNewCard(promptforname))
@@ -175,6 +190,7 @@ loadPage()
 function addAbility(abname) {
     this.name = abname;
 }
+//custom object code here
 function Pokemon(name, type, height, weight, abilities, moves) {
     this.name = name
     this.type = type
@@ -189,7 +205,9 @@ function createNewCard(name) {
     return new Pokemon(name, 'Student', '6 foot', '120', 'juggling', ['Overwork', 'Eat Burrito'])
 }
 
-//new CUSTOM card displayer function (yes I know this is repeating sorry i'm kind of up against the wall here)
+//new CUSTOM card displayer function (we should probably make a single displaycard function)
+//(but this is faster than error fixes for now)
+//dot notation used to access constructors/objects here, and earlier too
 function populateCustomCard(pokemon) {
     //start with a scene
     let cardScene = document.createElement('div')

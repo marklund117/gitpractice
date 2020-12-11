@@ -1,6 +1,10 @@
-//import data
-//stored in a different folder
-//haha yes e l r m
+//controls for the SWAPI project
+//this code contains: conditional logic, value comparison, string manipulation, arrays
+//import/export statements
+//arrays store and manipulate data
+//iterating through arrays with loops and array methods
+
+//import here (not sure what the context for us using export was supposed to be...)
 import { vehicles } from '../DATA/vehicles.js'
 import { planets } from '../DATA/planets.js'
 
@@ -44,6 +48,8 @@ mainHeader.appendChild(vButton)
 const bigPlanets = planets.filter(planet => planet.population >= 1000000)
 //console.log(bigPlanets)
 
+//value comparison/condidional logic here
+//and using arrays to store data
 const smallPlanets = planets.filter(planet => planet.population < 1000000)
 
 const unkPlanets = planets.filter(planet => planet.population === 'unknown')
@@ -66,12 +72,14 @@ sortPopUnk.addEventListener('click', event => {
 //func to populate planets
 function planetGrid(planets) {
     killYounglings(main)
+    //iterating through an array with loops and array methods
     planets.forEach((element) => {
         //make a figure
         const displayplanet = document.createElement('figure')
         //make img
         const planetPic = document.createElement('img')
         //assign value to img
+        //string manipulation
         planetPic.src = `https://starwars-visualguide.com/assets/img/planets/${element.url.split('/')[5]}.jpg`
         //make caption
         const planetCaption = document.createElement('figcaption')
