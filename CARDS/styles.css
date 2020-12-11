@@ -144,6 +144,22 @@ header {
     border-radius: 30px;
     text-align: center;
 }
+.scene:hover .frontimage {
+    background-color: rgb(185, 230, 202);
+}
+
+.scene:hover .frontlabel {
+    background-color: rgb(185, 230, 202);
+}
+
+.scene:hover .backlabel {
+    background-color: rgb(185, 230, 202);
+}
+
+.scene:hover .frontbuttons {
+    color: rgb(53, 184, 162);
+}
+
 .cardface--back {
     transform: rotateY(180deg);
     background: #444444;
