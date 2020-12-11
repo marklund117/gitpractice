@@ -54,7 +54,7 @@ const adderButton = document.querySelector('#adderbutton')
 //event listener for adder button
 adderButton.addEventListener('click', () => {
     let promptforname = prompt("What would you like to name the new card?")
-    populatePokeCard(createNewCard(promptforname))
+    populateCustomCard(createNewCard(promptforname))
 })
 
 //create a card grid
@@ -127,7 +127,6 @@ function populateBack(pokemon) {
     })
     //moves
     statsLabel.textContent = 'Other Stats:'
-    //const mostPowerfulMove = getBestPower(pokemon.moves)
     pokeHeight.textContent = `Height: ${pokemon.height}`
     pokeWeight.textContent = `Weight: ${pokemon.weight}`
     //***assign class names***
@@ -156,18 +155,6 @@ function populateBack(pokemon) {
     return cardBack
 }
 
-//function to sort moves
-function getBestPower(pokemoves) {
-    return pokemoves.reduce((mostPowerful, move) => {
-        //console.log(move.url)
-        getAPIData(move.move.url).then
-            (async (data) => {
-                console.log(data.accuracy, data.power)
-            })
-     //   return mostPowerful.power > move.power ? mostPowerful : move;
-    }, {})
-}
-
 //function to change the ID of a given pokemon to 3 digit format for use in the template URL
 function getThreeDigitID(pokemon) {
     if (pokemon.id <10) {
@@ -182,17 +169,113 @@ function getThreeDigitID(pokemon) {
     }
 }
 loadPage()
-delPage()
 
-function Pokemon(name, type, height, abilities, moves) {
+
+
+function addAbility(abname) {
+    this.name = abname;
+}
+function Pokemon(name, type, height, weight, abilities, moves) {
     this.name = name
     this.type = type
     this.height = height
-    this.abilities = abilities
-    this.id = 900
+    this.weight = weight
+    this.abilities = abilities;
+    this.id = 100
     this.moves = moves
 }
 //new card creator function
 function createNewCard(name) {
-    return new Pokemon(name, 'Student', '6 foot 4', ['Memes', 'Bad Sleep'], ['Overwork', 'Eat Eurrito'])
+    return new Pokemon(name, 'Student', '6 foot', '120', 'juggling', ['Overwork', 'Eat Burrito'])
+}
+
+//new CUSTOM card displayer function (yes I know this is repeating sorry i'm kind of up against the wall here)
+function populateCustomCard(pokemon) {
+    //start with a scene
+    let cardScene = document.createElement('div')
+    //create card div to go inside the scene
+    let card = document.createElement('div')
+    //assign cardScene a class name
+    cardScene.className = 'scene'
+    //assign card a class name
+    card.className = 'card'
+    //event listener for clicks
+    cardScene.addEventListener('click', () => {
+        card.classList.toggle('is-flipped')
+    })
+    //build the scene
+    card.appendChild(CpopulateFront(pokemon))
+    card.appendChild(CpopulateBack(pokemon))
+    cardScene.appendChild(card)
+    //add the scene to the grid
+    cardGrid.appendChild(cardScene)
+}
+//function to populate the card front
+function CpopulateFront(pokemon) {
+    //create elements
+    let cardFront = document.createElement('div')
+    let frontLabel = document.createElement('p')
+    let frontImage = document.createElement('img')
+    let frontButtons = document.createElement('h1')
+    //assign values
+    frontLabel.textContent = pokemon.name
+    frontButtons.textContent = `+ O`
+    frontImage.src = `https://static-cdn.jtvnw.net/emoticons/v1/1038939/3.0`
+    //assign class names
+    cardFront.className = 'cardface cardface--front'
+    frontLabel.className = 'frontlabel'
+    frontButtons.className = 'frontbuttons'
+    frontImage.className = 'frontimage'
+    //append
+    cardFront.appendChild(frontImage)
+    cardFront.appendChild(frontLabel)
+    cardFront.appendChild(frontButtons)
+    return cardFront
+}
+//function to populate the card back
+function CpopulateBack(pokemon) {
+    //***create elements***
+    //cardback itself
+    let cardBack = document.createElement('div')
+    let backLabel = document.createElement('p')
+    //ability label and list
+    let abilityLabel = document.createElement('h1')
+    let abilityList = document.createElement('ul')
+    //move label and list
+    let statsLabel = document.createElement('h1')
+    let pokeWeight = document.createElement('h1')
+    let pokeHeight = document.createElement('h1')
+    //***assign values***
+    backLabel.textContent = pokemon.name
+    //abilities
+    abilityLabel.textContent = 'Abilities:'
+    abilityList.textContent = pokemon.abilities
+    //moves
+    statsLabel.textContent = 'Other Stats:'
+    pokeHeight.textContent = `Height: ${pokemon.height}`
+    pokeWeight.textContent = `Weight: ${pokemon.weight}`
+    //***assign class names***
+    //back label
+    backLabel.className = 'backlabel'
+    //abilities
+    abilityLabel.className = 'abilitylabel'
+    abilityList.className = 'abilitylist'
+    //moves
+    statsLabel.className = 'abilitylabel'
+    pokeWeight.className = 'mostpow'
+    pokeHeight.className = 'mostpow'
+    //card back overall
+    cardBack.className = 'cardface cardface--back'
+    //***append***
+    //back label
+    cardBack.appendChild(backLabel)
+    //abilities
+    cardBack.appendChild(abilityLabel)
+    cardBack.appendChild(abilityList)
+    //moves
+    cardBack.appendChild(statsLabel)
+    cardBack.appendChild(pokeHeight)
+    cardBack.appendChild(pokeWeight)
+    //and finally, return the whole cardback
+    return cardBack
 }
