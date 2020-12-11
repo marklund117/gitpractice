@@ -12,7 +12,7 @@ async function getAPIData(url) {
 }
 //how many pokemon and starting from where?
 let startPoint = 1;
-let howMany = 60;
+let howMany = 40;
 
 //change the start point and card nums based on user input? (NEED TO FIND OUT HOW TO DO THIS)
 //let form = document.querySelector('form')
