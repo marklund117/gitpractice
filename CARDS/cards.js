@@ -1,5 +1,5 @@
 //this is the JS file to control the cards project
-//some incomplete functionality is commented out
+//some incomplete functionality is commented
 //this code contains:
 //variables and scope
 //custom objects
