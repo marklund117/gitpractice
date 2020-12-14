@@ -4,11 +4,15 @@ body {
   padding-left: 10px;
   color: white;
 }
+.wrapper {
+  min-width: 910px;
+}
 .toplogodiv {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
 }
 .toplogo {
   height: 100px;
@@ -19,6 +23,7 @@ body {
   font-size: 70px;
   font-family: "Share Tech";
   padding: 10px;
+
 }
 .uppercontainer {
   display: flex;
@@ -77,12 +82,15 @@ body {
   width: 100%;
   height: 181px;
   margin-top: 10px;
+  min-width: 700px;
+}
+.bulletdiv {
+  width: 700px;
 }
 .because {
   font-family: "share tech";
   padding-left: 23px;
-}
-.bulletdiv {
+  min-width: 700px;
 }
 .reasons {
   font-family: "share tech";
@@ -93,6 +101,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding-right: 10px;
+  min-width: 910px;
 }
 .icon {
   width: 220px;
