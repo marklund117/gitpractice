@@ -203,7 +203,7 @@ function Pokemon(name, type, height, weight, abilities, moves) {
 }
 //new card creator function
 function createNewCard(name) {
-    return new Pokemon(name, 'Student', '6 foot', '120', 'juggling', ['Overwork', 'Eat Burrito'])
+    return new Pokemon(name, 'Student', '6 foot', '120', 'never giving you up', ['Overwork', 'Eat Burrito'])
 }
 
 //new CUSTOM card displayer function (we should probably make a single displaycard function)
@@ -239,7 +239,7 @@ function CpopulateFront(pokemon) {
     //assign values
     frontLabel.textContent = pokemon.name
     frontButtons.textContent = `+ O`
-    frontImage.src = `https://static-cdn.jtvnw.net/emoticons/v1/1038939/3.0`
+    frontImage.src = `https://hooksandharmony.com/wp-content/uploads/2020/07/Rick-Astley-then-1200x900.jpg`
     //assign class names
     cardFront.className = 'cardface cardface--front'
     frontLabel.className = 'frontlabel'

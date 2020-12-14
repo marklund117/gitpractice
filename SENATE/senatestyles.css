@@ -1,4 +1,167 @@
 /* this is the style controls for the senator project */
 * {
     margin: 0;
+    box-sizing: border-box;
+    background-color: lightgrey;
+    user-select: none;
+}
+main {
+    background-color: lightgrey;
+    min-width: 900px;
+}
+img {
+    -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+button:focus {
+     outline-style: none; 
+}
+
+#peopleof {
+    font-size: 70px;
+    color: rgb(63, 75, 180);
+    padding: 20px;
+    font-family: monospace;
+    text-align: center;
+    background-color: lightgrey;
+    text-shadow: 2px 2px white;
+    min-width: 820px;
+}
+
+#buttons {
+    background-color: red;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-width: 820px;
+}
+#buttons button {
+    border-radius: 25px;
+    width: 250px;
+    margin: 10px;
+    background-color: rgb(48, 73, 180);
+    color: white;
+    font-family: monospace;
+    font-size: 1.7em;
+}
+
+#buttons button:hover{
+    background-color: rgb(18, 115, 243);
+}
+
+.senategrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.cardfig {
+    background-color: rgb(43, 43, 43);
+}
+.cardscene {
+    width: 250px;
+    height: 400px;
+    margin: 20px;
+    perspective: 600px;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-family: monospace;
+    transition: transform 0.5s ease-out;
+}
+
+.cardscene:hover {
+    transition: all 0.5s;
+    transform: translateY(-5px);
+}
+
+.cardimg {
+    width:200px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+
+.cardcap {
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: rgb(43, 43, 43);
+}
+
+.cardsen {
+    margin-top: 5px;
+    background-color: rgb(43, 43, 43);
+}
+
+.carddob {
+    margin-top: 5px;
+    background-color: rgb(43, 43, 43);
+}
+
+.fa-democrat {
+    color: #166bcc;
+    background-color: rgb(43, 43, 43);
+}
+
+.fa-republican {
+    color: rgb(226, 58, 58);
+    background-color: rgb(43, 43, 43);
+}
+
+.fa-flag-usa {
+    color: lightgrey;
+    background-color: rgb(43, 43, 43);
+}
+
+.sheevcard {
+    width: 340px;
+    height:340px;
+    margin: 20px;
+    perspective: 600px;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    background-color: rgb(43, 43, 43);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-family: monospace;
+}
+
+.sheevcap {
+    background-color: rgb(43, 43, 43);
+    text-align: center;
+    margin-top: 7px;
+}
+
+.sheevfig {
+    background-color: rgb(43, 43, 43);
+    margin-top: 20px;
+}
+
+.sheev {
+    border-radius: 10px;
+}
+
+.sheevdiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

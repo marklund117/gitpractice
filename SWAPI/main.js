@@ -1,10 +1,9 @@
 //controls for the SWAPI project
 //this code contains: conditional logic, value comparison, string manipulation, arrays
-//import/export statements
 //arrays store and manipulate data
 //iterating through arrays with loops and array methods
 
-//import here (not sure what the context for us using export was supposed to be...)
+//import here
 import { vehicles } from '../DATA/vehicles.js'
 import { planets } from '../DATA/planets.js'
 
